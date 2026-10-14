@@ -1,0 +1,10 @@
+[
+  {
+    "path": "../data/jurkat_aligned_raw_counts.h5ad",
+    "context": "jurkat",
+    "target_key": "target_gene",
+    "batch_key": "gem_group",
+    "control_label": "non-targeting",
+    "min_cells": 5
+  }
+]
