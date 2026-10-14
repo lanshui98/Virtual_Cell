@@ -2,7 +2,7 @@
 
 ESM2-conditioned rank-16 perturbation effects, reconstructed from the final historical Virtual Cell Challenge experiment. This repository contains runnable code and a synthetic example; the deleted real datasets, embeddings and model weights are **not included**.
 
-**技术路线：** 同 batch 的扰动/对照 → pseudobulk log1p 效应 → 训练集 SVD 响应基 → ESM2 靶基因编码预测 16 个模块系数 → 门控收缩 → control 共表达补全 → 匹配 control 的 Poisson 单细胞采样。
+**Pipeline:** batch-matched perturbation/control cells → pseudobulk log1p effects → training-set SVD response basis → ESM2 target-gene embeddings predict 16 module coefficients → gated shrinkage → control coexpression imputation → control-matched Poisson single-cell sampling.
 
 ```mermaid
 flowchart LR
@@ -93,19 +93,8 @@ The final run was `esm2_lowrank_full_rank16_v1`, submitted as `esm2-lowrank-r16-
 
 Historical five-seed best NMAE proxy was approximately **0.909 ± 0.006**, against zero-effect 1.0. These are recovered records, **not results reproduced by this repository and not official scores**. The five-seed script evaluated with training-mode dropout enabled; this implementation uses evaluation mode. Original splits, weights and data were deleted, so exact numerical reproduction is unavailable. The known submission reached `scoring`; no final official score was recovered.
 
-See [provenance and reconstruction changes](docs/PROVENANCE.md) and [method details](docs/METHODS.md).
+See [method details](docs/METHODS.md).
 
-## Upload to GitHub
+## License
 
-Only code, documentation, config examples and tests should be versioned. `.gitignore` excludes datasets, weights, predictions and credentials. This project is ready for a new repository:
-
-```bash
-git init
-git add .
-git commit -m "Add reconstructed virtual cell low-rank pipeline"
-git branch -M main
-git remote add origin https://github.com/lanshui98/virtual-cell-lowrank.git
-git push -u origin main
-```
-
-No remote repository has been created by this reconstruction. Choose a distribution license before publishing; no ownership or license of third-party data, embeddings or earlier dependencies is asserted here.
+No license has been chosen yet. No ownership or license of third-party data, embeddings or earlier dependencies is asserted here.
