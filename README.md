@@ -97,4 +97,4 @@ See [method details](docs/METHODS.md).
 
 ## License
 
-No license has been chosen yet. No ownership or license of third-party data, embeddings or earlier dependencies is asserted here.
+The code in this repository is released under the [MIT License](LICENSE). No ownership or license of third-party data, embeddings or earlier dependencies is asserted here.
